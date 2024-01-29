@@ -1,5 +1,19 @@
 ---
+import '../styles/global.css';
+const pageTitle = "¿Quién es Casariana dev?"
 
+const identity = {
+  firstName: "Julián Meneses",
+  country: "Colombiaa",
+  occupation: "Desarrollador",
+  hobbies: ["Nadar", "Ver películas", "Compartir en familia"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Tailwind-css", "Astro", "Redacción de documentos"];
+const happy = true;
+const finished = false;
+const goal = 3;
+const skillColor = "navy"
 ---
 
 <html lang="es">
@@ -8,22 +22,32 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Casariana Dev</title>
+		<title>{pageTitle}</title>
+        <style define:vars={{skillColor}}>
+            .skill {
+                color: var(--skillColor)
+            }
+        </style>
 	</head>
 	<body>
         <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Blog</a>
-		<h1>Casariana Dev</h1>
+            <a href="/about/">Sobre mi</a>
+            <a href="/blog/">Blog</a>
+		<h1>{pageTitle}</h1>
+        <h2>He aquí algunos datos sobre mí:</h2>
+        <ul>
+            <li>Me llamo {identity.firstName}.</li>
+            <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+            {identity.hobbies.length >= 3 &&
+                <li>Tres de mis aficiones son: {identity.hobbies[0]}, {identity.hobbies[1]} y {identity.hobbies[2]}</li>
+            }
+        </ul>
+        
         <p>Repensar a cerca de las habilidades que usamos para ser productivos es el factor común en la actualidad; pues muchos saberes están siendo relegados por el crecimiento exponencial de la tecnología.</p>
         <p>El analisis y desarrollo de software, habilidades que, bajo mi percepción, podrán dar continuidad a la evolución de la tecnologia manejada por los humanos ante la oleada del control de las actividades por parte de las IAs que hoy nos inundan y desplazan la actividad humana sobre sus propios quehaceres</p>
-        <h2>Habilidades Duras</h2>
+       <h2>Mis habilidades duras son:</h2>
         <ul>
-            <li>Capacidad de observación y analisis</li>
-            <li>Proceso de aprendizaje en lenguajes como <span>Javascript</span></li>
-            <li>Proceso de aprendizaje en herramientas back como <span>NodeJS</span></li>
-            <li>Proceso de aprendizaje en frameworks front como <span>Astro</span> y <span>Tailwind-css</span></li>
-            
+            {skills.map((skill) => <li>{skill}</li>)}
         </ul>
         <h2>Habilidades Blandas</h2>
         <p>En la actualidad la productividad marca gran diferencia en los intervinientes de la economía, y en muchos casos podemos diferenciar a estos intervinientes a través de las habilidades blandas pues dan a los equipos de trabajo y usuarios finales un plus de servicio y apoyo que termina determinando motivos de eleccón y blablabla</p>
@@ -35,5 +59,11 @@
             <li>Empatia</li>
             <li>Ética</li>
         </ul>
+
+        {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+        {finished && <p>¡He terminado este tutorial!</p>}
+
+        {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 	</body>
 </html>
