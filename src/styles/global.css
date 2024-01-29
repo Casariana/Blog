@@ -9,6 +9,7 @@ html {
     max-width: 80ch;
     padding: 1rem;
     line-height: 1.5;
+    background-color: #ffd57b4b;
   }
   
   * {
@@ -16,7 +17,7 @@ html {
   }
   
   h1 {
-    color: purple;
+    color: hsl(300, 100%, 25%);
     margin: 1rem 0;
     font-size: 2.5rem;
   }

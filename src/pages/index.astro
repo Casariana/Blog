@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from "../components/navigation.astro"
 const pageTitle = "Casariana dev"
 ---
 <html lang="es">
@@ -9,9 +10,7 @@ const pageTitle = "Casariana dev"
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Navigation/>
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from "../components/navigation.astro"
 const pageTitle = "¿Quién es Casariana dev?"
 
 const identity = {
@@ -30,9 +31,7 @@ const skillColor = "navy"
         </style>
 	</head>
 	<body>
-        <a href="/">Inicio</a>
-            <a href="/about/">Sobre mi</a>
-            <a href="/blog/">Blog</a>
+        <Navigation/>
 		<h1>{pageTitle}</h1>
         <h2>He aquí algunos datos sobre mí:</h2>
         <ul>
