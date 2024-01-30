@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import Navigation from "../components/navigation.astro"
+import Footer from '../components/footer.astro';
+import Header from '../components/header.astro';
 const pageTitle = "¿Quién es Casariana dev?"
 
 const identity = {
@@ -31,7 +32,7 @@ const skillColor = "navy"
         </style>
 	</head>
 	<body>
-        <Navigation/>
+        <Header/>
 		<h1>{pageTitle}</h1>
         <h2>He aquí algunos datos sobre mí:</h2>
         <ul>
@@ -64,5 +65,9 @@ const skillColor = "navy"
         {finished && <p>¡He terminado este tutorial!</p>}
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+        <Footer/>
+        <script>
+            import "../scripts/menu.js"
+          </script>
 	</body>
 </html>
